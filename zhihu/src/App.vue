@@ -25,7 +25,7 @@
               v-for="(item,index) in list.stories"
               :key="index"
  :data="item"
-	@click.native="handleClick(item.id)"
+@click.native="handleClick(item.id)"
  ></Item>
         </div>
       </template>
@@ -57,8 +57,8 @@ export default {
       list: [],
       isLoading: false,
       dailyTime: $.getTodayTime(),
-	  recommendList: [],
-	  articleId: 0
+      recommendList: [],
+      articleId: 0
     }
   },
   components: {
@@ -75,7 +75,7 @@ export default {
       let day = date.substr(6, 2)
       if (month.substr(0, 1) === '0') month = month.substr(1, 1)
       if (day.substr(0, 1) === '0') day = day.substr(1, 1)
-      return `${month} 月 ${day} 日　`
+      return `${month} 月 ${day} 日`
     },
     getThemes () {
       $.ajax.get('themes').then(res => {
